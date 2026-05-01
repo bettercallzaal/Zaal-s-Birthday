@@ -595,22 +595,59 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
         />
       </motion.div>
 
-      {/* Footer Info */}
+      {/* Ecosystem brand-pill grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="mt-6 max-w-3xl mx-auto pointer-events-auto"
+      >
+        <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500 text-center mb-3 font-bold">
+          The ZAO ecosystem
+        </p>
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <a href="https://zaoos.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/the-zao-logo.png" alt="The ZAO" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">The ZAO</span>
+          </a>
+          <a href="https://zaostock.com" target="_blank" rel="noopener noreferrer" className="bg-yellow-500/[0.08] hover:bg-yellow-500/[0.18] border border-yellow-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-yellow-400 mt-1">ZAOstock</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">Oct 3 2026</span>
+          </a>
+          <a href="https://wavewarz.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/wavewarz-logo.png" alt="WaveWarZ" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">WaveWarZ</span>
+          </a>
+          <a href="https://zaoos.com/zabal" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/zabal-z.png" alt="ZABAL" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZABAL</span>
+          </a>
+          <a href="https://bettercallzaal.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-white mt-1">BCZ</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">BetterCallZaal</span>
+          </a>
+          <a href="https://pressreleasemarketplace.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-white mt-1">PRM</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">PR Marketplace</span>
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Shoutout to Samantha + festival info */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="mt-6 flex flex-col md:flex-row justify-between items-center gap-6 border-t-2 border-white/10 pt-6"
+        transition={{ delay: 1.2 }}
+        className="mt-6 flex flex-col md:flex-row justify-between items-center gap-3 border-t border-white/10 pt-4 pointer-events-auto"
       >
-        <div className="text-xs font-black text-gray-500 italic tracking-[0.2em] flex gap-4 flex-wrap justify-center">
-          <span>THE ZAO</span>
-          <span className="text-red-600">·</span>
-          <span>WAVEWARZ</span>
-          <span className="text-red-600">·</span>
-          <span>ZABAL</span>
-          <span className="text-red-600">·</span>
-          <span>BETTERCALLZAAL</span>
-        </div>
+        <a
+          href="https://x.com/candytoyboxyt"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-gray-400 hover:text-yellow-400 transition-colors"
+        >
+          Birthday page designed by <span className="text-yellow-400 font-bold">Samantha (@candytoyboxyt)</span> · iterated with Zaal
+        </a>
         <div className="text-[10px] text-gray-600 font-mono tracking-tighter">
           ZAOstock 2026 · Ellsworth ME · Oct 3
         </div>
