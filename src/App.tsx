@@ -18,7 +18,6 @@ import confetti from 'canvas-confetti';
 // --- Constants ---
 const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/zaalpanthaki";
 const GIVETH_LINK = "https://giveth.io/project/sustaining-zao-festivals-creativity-technology";
-const DONATE_HUB_LINK = "https://donate.zaostock.com";
 
 const COLORS = {
   zabalRed: '#DC2626',
@@ -552,15 +551,6 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             className="mt-3 w-full block bg-white/[0.08] hover:bg-white/[0.16] text-white font-bold py-3 px-6 rounded-xl transition-all text-center text-sm"
           >
             Send crypto via Giveth →
-          </a>
-
-          <a
-            href={DONATE_HUB_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 block text-center text-xs text-gray-400 hover:text-white underline underline-offset-4"
-          >
-            Tax-deductible + more options at donate.zaostock.com
           </a>
 
           <div className="mt-6 flex justify-center gap-4 grayscale opacity-50">
