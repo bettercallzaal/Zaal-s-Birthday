@@ -18,7 +18,6 @@ import confetti from 'canvas-confetti';
 // --- Constants ---
 const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/zaalpanthaki";
 const GIVETH_LINK = "https://giveth.io/project/sustaining-zao-festivals-creativity-technology";
-const DONATE_HUB_LINK = "https://donate.zaostock.com";
 
 const COLORS = {
   zabalRed: '#DC2626',
@@ -183,12 +182,12 @@ function WallDecor() {
       </mesh>
       <Text
         position={[0, 3, 0.1]}
-        fontSize={1}
+        fontSize={0.7}
         color={COLORS.zabalWhite}
         anchorX="center"
         anchorY="middle"
       >
-        ZABAL
+        ZAO FESTIVALS
       </Text>
       
       {/* Geometric Triangles */}
@@ -473,7 +472,7 @@ function PartyRoom({ onGiftClick }: { onGiftClick: () => void }) {
  */
 const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
   return (
-    <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-6 md:p-12 text-white">
+    <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 sm:p-6 md:p-12 text-white overflow-y-auto overflow-x-hidden">
       {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }} 
@@ -504,42 +503,42 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, type: 'spring' }}
-          className="max-w-md bg-black/60 backdrop-blur-xl p-10 border-2 border-white/20 rounded-[2.5rem] pointer-events-auto relative overflow-hidden"
+          className="w-full max-w-md bg-black/70 backdrop-blur-xl p-6 sm:p-8 md:p-10 border-2 border-white/20 rounded-3xl sm:rounded-[2.5rem] pointer-events-auto relative overflow-hidden"
         >
           {/* Subtle decoration in card */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/20 blur-3xl -z-10" />
 
           {/* Zaal avatar */}
-          <div className="flex items-center gap-4 mb-5">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
             <img
               src="/zao/zaal-avatar.jpeg"
               alt="Zaal"
-              className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover shadow-[0_0_20px_rgba(250,204,21,0.4)]"
+              className="w-14 h-14 sm:w-20 sm:h-20 rounded-full border-2 border-yellow-400 object-cover shadow-[0_0_20px_rgba(250,204,21,0.4)]"
             />
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-yellow-400 font-bold">Birthday Drop</p>
-              <p className="text-sm text-white font-bold">Apr 30 / Maine bound</p>
+              <p className="text-sm text-white font-bold">May 1 / Maine in October</p>
             </div>
           </div>
 
-          <h2 className="text-5xl font-black mb-6 leading-none italic uppercase tracking-tighter text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-none italic uppercase tracking-tighter text-white">
             Gift Zaal for <br /><span className="text-red-500">ZAOstock</span>
           </h2>
-          <p className="text-yellow-400 font-black text-lg mb-6 leading-tight">
-            Help fuel the biggest celebration in Ellsworth, Maine.
+          <p className="text-yellow-400 font-black text-base sm:text-lg mb-4 sm:mb-6 leading-tight">
+            A community-built music festival in Ellsworth, Maine.
           </p>
-          <div className="space-y-4 mb-8">
+          <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
             <p className="text-gray-300 text-sm leading-relaxed">
-              Zaal is throwing <strong>ZAO-STOCK</strong>: a community-powered festival on <span className="text-white font-bold">October 3, 2026</span>.
+              Zaal is throwing <strong>ZAOstock</strong>: a community-powered festival on <span className="text-white font-bold">October 3, 2026</span>.
             </p>
             <p className="text-gray-400 text-xs italic">
-              Your gift directly powers the stage, the artists, and the community vibe that makes ZAO legendary.
+              Your gift goes to artist pay and materials for the event.
             </p>
           </div>
           
           <button
             onClick={onGiftClick}
-            className="w-full bg-red-600 hover:bg-white hover:text-black text-white font-black py-5 px-8 rounded-2xl transition-all shadow-[0_0_40px_rgba(220,38,38,0.3)] flex items-center justify-center gap-3 group text-xl"
+            className="w-full bg-red-600 hover:bg-white hover:text-black text-white font-black py-4 sm:py-5 px-6 sm:px-8 rounded-2xl transition-all shadow-[0_0_40px_rgba(220,38,38,0.3)] flex items-center justify-center gap-3 group text-lg sm:text-xl"
           >
             SEND VIA PAYPAL
             <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
@@ -552,15 +551,6 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             className="mt-3 w-full block bg-white/[0.08] hover:bg-white/[0.16] text-white font-bold py-3 px-6 rounded-xl transition-all text-center text-sm"
           >
             Send crypto via Giveth →
-          </a>
-
-          <a
-            href={DONATE_HUB_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 block text-center text-xs text-gray-400 hover:text-white underline underline-offset-4"
-          >
-            Tax-deductible + more options at donate.zaostock.com
           </a>
 
           <div className="mt-6 flex justify-center gap-4 grayscale opacity-50">
@@ -618,9 +608,9 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             <img src="/zao/wavewarz-logo.png" alt="WaveWarZ" className="w-10 h-10 object-contain" />
             <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">WaveWarZ</span>
           </a>
-          <a href="https://zaoos.com/zabal" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
-            <img src="/zao/zabal-z.png" alt="ZABAL" className="w-10 h-10 object-contain" />
-            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZABAL</span>
+          <a href="https://zaoos.com" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/zabal-z.png" alt="ZAO Festivals" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZAO Festivals</span>
           </a>
           <a href="https://bettercallzaal.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
             <span className="text-[10px] font-black text-white mt-1">BCZ</span>
@@ -666,7 +656,7 @@ export default function App() {
     <div className="relative w-full h-screen bg-[#0a0a20] overflow-hidden font-sans">
       {/* 3D Viewport */}
       <div className="absolute inset-0">
-        <Canvas shadows gl={{ antialias: true }}>
+        <Canvas shadows dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: 'low-power' }}>
           <Suspense fallback={<Text color="white" position={[0,0,0]}>LOADING PARTY...</Text>}>
             <PartyRoom onGiftClick={handleGiftClick} />
           </Suspense>
