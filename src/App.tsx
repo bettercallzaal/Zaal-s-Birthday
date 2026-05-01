@@ -16,7 +16,9 @@ import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
 
 // --- Constants ---
-const PAYPAL_PAYMENT_LINK = "https://www.paypal.com/paypalme/YOUR_LINK_HERE"; // Placeholder
+const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/bettercallzaal";
+const GIVETH_LINK = "https://giveth.io/project/sustaining-zao-festivals-creativity-technology";
+const DONATE_HUB_LINK = "https://donate.zaostock.com";
 
 const COLORS = {
   zabalRed: '#DC2626',
@@ -515,16 +517,34 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             </p>
           </div>
           
-          <button 
+          <button
             onClick={onGiftClick}
             className="w-full bg-red-600 hover:bg-white hover:text-black text-white font-black py-5 px-8 rounded-2xl transition-all shadow-[0_0_40px_rgba(220,38,38,0.3)] flex items-center justify-center gap-3 group text-xl"
           >
-            SEND BIRTHDAY GIFT
-            <span className="group-hover:translate-x-2 transition-transform text-2xl">⚡</span>
+            SEND VIA PAYPAL
+            <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
           </button>
-          
+
+          <a
+            href={GIVETH_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 w-full block bg-white/[0.08] hover:bg-white/[0.16] text-white font-bold py-3 px-6 rounded-xl transition-all text-center text-sm"
+          >
+            Send crypto via Giveth →
+          </a>
+
+          <a
+            href={DONATE_HUB_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block text-center text-xs text-gray-400 hover:text-white underline underline-offset-4"
+          >
+            Tax-deductible + more options at donate.zaostock.com
+          </a>
+
           <div className="mt-6 flex justify-center gap-4 grayscale opacity-50">
-            <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Web3</div>
+            <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">ZAOstock</div>
             <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Music</div>
             <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Community</div>
           </div>
