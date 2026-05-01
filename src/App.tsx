@@ -16,7 +16,9 @@ import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
 
 // --- Constants ---
-const PAYPAL_PAYMENT_LINK = "https://www.paypal.com/paypalme/YOUR_LINK_HERE"; // Placeholder
+const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/zaalpanthaki";
+const GIVETH_LINK = "https://giveth.io/project/sustaining-zao-festivals-creativity-technology";
+const DONATE_HUB_LINK = "https://donate.zaostock.com";
 
 const COLORS = {
   zabalRed: '#DC2626',
@@ -478,13 +480,20 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
       >
-        <div className="flex items-center gap-4">
-          <div className="bg-red-600 px-6 py-3 font-varsity text-4xl italic tracking-tighter border-2 border-white shadow-[6px_6px_0px_white] rotate-[-2deg]">
-            ZABAL
-          </div>
+        <div className="flex items-center gap-3 md:gap-4">
+          <img
+            src="/zao/zabal-z.png"
+            alt="ZABAL"
+            className="w-14 h-14 md:w-16 md:h-16 rounded-lg shadow-[4px_4px_0px_white] rotate-[-3deg]"
+          />
+          <img
+            src="/zao/the-zao-logo.png"
+            alt="The ZAO"
+            className="w-16 h-16 md:w-20 md:h-20 rounded-lg"
+          />
           <div>
-            <h1 className="text-2xl font-black uppercase tracking-tighter text-yellow-400">ZAO-STOCK</h1>
-            <p className="text-[10px] text-blue-300 font-bold tracking-widest bg-blue-900/50 px-2 py-0.5 rounded">ZAO FESTIVALS • EST. 2024</p>
+            <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-yellow-400">ZAOstock</h1>
+            <p className="text-[10px] text-blue-300 font-bold tracking-widest bg-blue-900/50 px-2 py-0.5 rounded">ZAO FESTIVALS</p>
           </div>
         </div>
       </motion.div>
@@ -499,9 +508,22 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
         >
           {/* Subtle decoration in card */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/20 blur-3xl -z-10" />
-          
+
+          {/* Zaal avatar */}
+          <div className="flex items-center gap-4 mb-5">
+            <img
+              src="/zao/zaal-avatar.jpeg"
+              alt="Zaal"
+              className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover shadow-[0_0_20px_rgba(250,204,21,0.4)]"
+            />
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-yellow-400 font-bold">Birthday Drop</p>
+              <p className="text-sm text-white font-bold">Apr 30 / Maine bound</p>
+            </div>
+          </div>
+
           <h2 className="text-5xl font-black mb-6 leading-none italic uppercase tracking-tighter text-white">
-            Gift Zaal for <br /><span className="text-red-500 font-varsity">ZAO-STOCK</span>
+            Gift Zaal for <br /><span className="text-red-500">ZAOstock</span>
           </h2>
           <p className="text-yellow-400 font-black text-lg mb-6 leading-tight">
             Help fuel the biggest celebration in Ellsworth, Maine.
@@ -515,40 +537,119 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             </p>
           </div>
           
-          <button 
+          <button
             onClick={onGiftClick}
             className="w-full bg-red-600 hover:bg-white hover:text-black text-white font-black py-5 px-8 rounded-2xl transition-all shadow-[0_0_40px_rgba(220,38,38,0.3)] flex items-center justify-center gap-3 group text-xl"
           >
-            SEND BIRTHDAY GIFT
-            <span className="group-hover:translate-x-2 transition-transform text-2xl">⚡</span>
+            SEND VIA PAYPAL
+            <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
           </button>
-          
+
+          <a
+            href={GIVETH_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 w-full block bg-white/[0.08] hover:bg-white/[0.16] text-white font-bold py-3 px-6 rounded-xl transition-all text-center text-sm"
+          >
+            Send crypto via Giveth →
+          </a>
+
+          <a
+            href={DONATE_HUB_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block text-center text-xs text-gray-400 hover:text-white underline underline-offset-4"
+          >
+            Tax-deductible + more options at donate.zaostock.com
+          </a>
+
           <div className="mt-6 flex justify-center gap-4 grayscale opacity-50">
-            <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Web3</div>
+            <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">ZAOstock</div>
             <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Music</div>
             <div className="text-[8px] font-bold border border-white px-2 py-1 uppercase">Community</div>
           </div>
         </motion.div>
       </div>
 
-      {/* Footer Info */}
-      <motion.div 
+      {/* Photo strip */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="mt-6 grid grid-cols-3 gap-2 max-w-2xl mx-auto pointer-events-auto"
+      >
+        <img
+          src="/zao/wavewarz-banner.jpg"
+          alt="WaveWarZ stage"
+          className="w-full h-20 md:h-28 object-cover rounded-lg border border-white/20 opacity-90 hover:opacity-100 transition-opacity"
+        />
+        <img
+          src="/zao/wavewarz-zaal.jpg"
+          alt="Zaal performing at WaveWarZ"
+          className="w-full h-20 md:h-28 object-cover rounded-lg border border-white/20 opacity-90 hover:opacity-100 transition-opacity"
+        />
+        <img
+          src="/zao/zabal-art.jpeg"
+          alt="ZABAL"
+          className="w-full h-20 md:h-28 object-cover rounded-lg border border-white/20 opacity-90 hover:opacity-100 transition-opacity"
+        />
+      </motion.div>
+
+      {/* Ecosystem brand-pill grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="mt-6 max-w-3xl mx-auto pointer-events-auto"
+      >
+        <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500 text-center mb-3 font-bold">
+          The ZAO ecosystem
+        </p>
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <a href="https://zaoos.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/the-zao-logo.png" alt="The ZAO" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">The ZAO</span>
+          </a>
+          <a href="https://zaostock.com" target="_blank" rel="noopener noreferrer" className="bg-yellow-500/[0.08] hover:bg-yellow-500/[0.18] border border-yellow-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-yellow-400 mt-1">ZAOstock</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">Oct 3 2026</span>
+          </a>
+          <a href="https://wavewarz.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/wavewarz-logo.png" alt="WaveWarZ" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">WaveWarZ</span>
+          </a>
+          <a href="https://zaoos.com/zabal" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/zabal-z.png" alt="ZABAL" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZABAL</span>
+          </a>
+          <a href="https://bettercallzaal.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-white mt-1">BCZ</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">BetterCallZaal</span>
+          </a>
+          <a href="https://pressreleasemarketplace.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <span className="text-[10px] font-black text-white mt-1">PRM</span>
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">PR Marketplace</span>
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Shoutout to Samantha + festival info */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="mt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t-2 border-white/10 pt-8"
+        transition={{ delay: 1.2 }}
+        className="mt-6 flex flex-col md:flex-row justify-between items-center gap-3 border-t border-white/10 pt-4 pointer-events-auto"
       >
-        <div className="text-xs font-black text-gray-500 italic tracking-[0.2em] flex gap-4 flex-wrap justify-center">
-          <span>THE ZAO</span>
-          <span className="text-red-600">•</span>
-          <span>WAVEWARZ</span>
-          <span className="text-red-600">•</span>
-          <span>THE ZABAL</span>
-          <span className="text-red-600">•</span>
-          <span>BETTERCALL ZAAL STRATEGIES</span>
-        </div>
+        <a
+          href="https://x.com/candytoyboxyt"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-gray-400 hover:text-yellow-400 transition-colors"
+        >
+          Birthday page designed by <span className="text-yellow-400 font-bold">Samantha (@candytoyboxyt)</span> · iterated with Zaal
+        </a>
         <div className="text-[10px] text-gray-600 font-mono tracking-tighter">
-          ZAO-STOCK 2026 • BUILT FOR THE ARTISTS
+          ZAOstock 2026 · Ellsworth ME · Oct 3
         </div>
       </motion.div>
     </div>
