@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-varsity: "Graduate", serif;
+}
