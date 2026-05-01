@@ -16,7 +16,7 @@ import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
 
 // --- Constants ---
-const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/bettercallzaal";
+const PAYPAL_PAYMENT_LINK = "https://paypal.com/paypalme/zaalpanthaki";
 const GIVETH_LINK = "https://giveth.io/project/sustaining-zao-festivals-creativity-technology";
 const DONATE_HUB_LINK = "https://donate.zaostock.com";
 
