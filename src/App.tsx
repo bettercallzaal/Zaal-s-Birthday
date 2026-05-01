@@ -182,12 +182,12 @@ function WallDecor() {
       </mesh>
       <Text
         position={[0, 3, 0.1]}
-        fontSize={1}
+        fontSize={0.7}
         color={COLORS.zabalWhite}
         anchorX="center"
         anchorY="middle"
       >
-        ZABAL
+        ZAO FESTIVALS
       </Text>
       
       {/* Geometric Triangles */}
@@ -608,9 +608,9 @@ const UIOverlay = ({ onGiftClick }: { onGiftClick: () => void }) => {
             <img src="/zao/wavewarz-logo.png" alt="WaveWarZ" className="w-10 h-10 object-contain" />
             <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">WaveWarZ</span>
           </a>
-          <a href="https://zaoos.com/zabal" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
-            <img src="/zao/zabal-z.png" alt="ZABAL" className="w-10 h-10 object-contain" />
-            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZABAL</span>
+          <a href="https://zaoos.com" target="_blank" rel="noopener noreferrer" className="bg-red-500/[0.08] hover:bg-red-500/[0.18] border border-red-500/30 rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
+            <img src="/zao/zabal-z.png" alt="ZAO Festivals" className="w-10 h-10 object-contain" />
+            <span className="text-[8px] uppercase tracking-wider text-gray-400 group-hover:text-white">ZAO Festivals</span>
           </a>
           <a href="https://bettercallzaal.com" target="_blank" rel="noopener noreferrer" className="bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.08] rounded-lg p-2 flex flex-col items-center gap-1 transition-colors group">
             <span className="text-[10px] font-black text-white mt-1">BCZ</span>
@@ -656,7 +656,7 @@ export default function App() {
     <div className="relative w-full h-screen bg-[#0a0a20] overflow-hidden font-sans">
       {/* 3D Viewport */}
       <div className="absolute inset-0">
-        <Canvas shadows gl={{ antialias: true }}>
+        <Canvas shadows dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: 'low-power' }}>
           <Suspense fallback={<Text color="white" position={[0,0,0]}>LOADING PARTY...</Text>}>
             <PartyRoom onGiftClick={handleGiftClick} />
           </Suspense>
