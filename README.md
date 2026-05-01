@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Zaal Donate Button
 
-# Run and deploy your AI Studio app
+Birthday + donate page for ZAOstock 2026. Hosted at `birthday.zaostock.com`.
 
-This contains everything you need to run your app locally.
+## What it does
 
-View your app in AI Studio: https://ai.studio/apps/dcc91cd0-dc9c-4394-b19e-5cb3dbe58bc6
+- Big PayPal CTA → `paypal.com/paypalme/zaalpanthaki`
+- Crypto secondary → Giveth project (`sustaining-zao-festivals-creativity-technology`)
+- Hub link → `donate.zaostock.com` for the full 2-path UI
+- 3D party room scene (R3F + drei)
+- ZAO ecosystem brand-pill grid (The ZAO, ZAOstock, WaveWarZ, ZABAL, BetterCallZaal, Press Release Marketplace)
+- Photo strip (WaveWarZ + cipher + ZABAL)
+- Shoutout to Samantha (@candytoyboxyt) who designed the original
 
-## Run Locally
+## Stack
 
-**Prerequisites:**  Node.js
+- Vite + React 19
+- @react-three/fiber + @react-three/drei + three
+- Tailwind v4 (via @tailwindcss/vite)
+- motion (framer-motion successor)
+- canvas-confetti
 
+## Run locally
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run preview
+```
+
+## Deploy
+
+Connect the repo to Vercel. Framework auto-detects Vite. Add custom domain `birthday.zaostock.com` in Vercel project settings.
+
+## Origin
+
+Forked from `CandyToyBox/Zaal-s-Birthday` — original 3D party scene by Samantha. Iterated by Zaal + Claude for ZAOstock 2026 launch.
